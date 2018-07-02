@@ -1,12 +1,12 @@
-defmodule ComboxWeb do
+defmodule TrafficWardenWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use ComboxWeb, :controller
-      use ComboxWeb, :view
+      use TrafficWardenWeb, :controller
+      use TrafficWardenWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,24 +19,24 @@ defmodule ComboxWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ComboxWeb
+      use Phoenix.Controller, namespace: TrafficWardenWeb
       import Plug.Conn
-      import ComboxWeb.Router.Helpers
-      import ComboxWeb.Gettext
+      import TrafficWardenWeb.Router.Helpers
+      import TrafficWardenWeb.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/combox_web/templates",
-                        namespace: ComboxWeb
+      use Phoenix.View, root: "lib/traffic_warden_web/templates",
+                        namespace: TrafficWardenWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
 
-      import ComboxWeb.Router.Helpers
-      import ComboxWeb.ErrorHelpers
-      import ComboxWeb.Gettext
+      import TrafficWardenWeb.Router.Helpers
+      import TrafficWardenWeb.ErrorHelpers
+      import TrafficWardenWeb.Gettext
     end
   end
 
@@ -51,7 +51,7 @@ defmodule ComboxWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import ComboxWeb.Gettext
+      import TrafficWardenWeb.Gettext
     end
   end
 

@@ -1,4 +1,4 @@
-defmodule Combox.Application do
+defmodule TrafficWarden.Application do
   use Application
 
   # See https://hexdocs.pm/elixir/Application.html
@@ -9,23 +9,23 @@ defmodule Combox.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(Combox.Repo, []),
+      supervisor(TrafficWarden.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(ComboxWeb.Endpoint, []),
-      # Start your own worker by calling: Combox.Worker.start_link(arg1, arg2, arg3)
-      # worker(Combox.Worker, [arg1, arg2, arg3]),
+      supervisor(TrafficWardenWeb.Endpoint, []),
+      # Start your own worker by calling: TrafficWarden.Worker.start_link(arg1, arg2, arg3)
+      # worker(TrafficWarden.Worker, [arg1, arg2, arg3]),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Combox.Supervisor]
+    opts = [strategy: :one_for_one, name: TrafficWarden.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    ComboxWeb.Endpoint.config_change(changed, removed)
+    TrafficWardenWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

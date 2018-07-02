@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :combox,
-  ecto_repos: [Combox.Repo]
+config :traffic_warden,
+  ecto_repos: [TrafficWarden.Repo]
 
 # Configures the endpoint
-config :combox, ComboxWeb.Endpoint,
+config :traffic_warden, TrafficWardenWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "u0m2ixv4ZFsC7HmhnXgUtRDV0QDylvBJq2oS2rBN+6EAEXo/N+HhmLIfUgtZ2MY4",
-  render_errors: [view: ComboxWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: Combox.PubSub,
+  secret_key_base: "J78k+cCXSPyfGEhuEWZcO9r+wNnUUE7mYAxHfZ1MqdpUuFpVPEepzK2J0mTN/qw/",
+  render_errors: [view: TrafficWardenWeb.ErrorView, accepts: ~w(json)],
+  pubsub: [name: TrafficWarden.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

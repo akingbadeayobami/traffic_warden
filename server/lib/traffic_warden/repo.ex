@@ -1,5 +1,5 @@
-defmodule Combox.Repo do
-  use Ecto.Repo, otp_app: :combox
+defmodule TrafficWarden.Repo do
+  use Ecto.Repo, otp_app: :traffic_warden
 
   @doc """
   Dynamically loads the repository url from the

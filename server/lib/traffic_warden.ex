@@ -1,6 +1,6 @@
-defmodule Combox do
+defmodule TrafficWarden do
   @moduledoc """
-  Combox keeps the contexts that define your domain
+  TrafficWarden keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

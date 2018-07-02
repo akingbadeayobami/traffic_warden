@@ -1,5 +1,5 @@
-defmodule ComboxWeb.ErrorView do
-  use ComboxWeb, :view
+defmodule TrafficWardenWeb.ErrorView do
+  use TrafficWardenWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

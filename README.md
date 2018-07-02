@@ -1,6 +1,9 @@
 ### Traffic Warden
 
-This a project to show my knowledge of the Phoenix framework.
-The project allows users to post their traffic situations and other users comment on them.
-Also they will be able to vote them up or down.
-All this will be done in real time.
+This project is born out of the need to build something off my knowledge of the Phoenix framework.
+
+This project features:
+- Users be able to post their traffic situation.
+- Other users will able to vote them up or down based on its validity
+- Each post will able to have only a first level comment
+- All actions will be processed in real-time

@@ -26,3 +26,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.card .card-content{
+  padding-bottom: 5px;
+}
+p.extra-details{
+  color: #ddd;
+}

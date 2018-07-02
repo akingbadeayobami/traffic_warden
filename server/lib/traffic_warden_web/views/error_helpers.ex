@@ -1,4 +1,4 @@
-defmodule ComboxWeb.ErrorHelpers do
+defmodule TrafficWardenWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -25,9 +25,9 @@ defmodule ComboxWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(ComboxWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(TrafficWardenWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(ComboxWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(TrafficWardenWeb.Gettext, "errors", msg, opts)
     end
   end
 end
