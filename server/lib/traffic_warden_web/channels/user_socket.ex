@@ -2,7 +2,7 @@ defmodule TrafficWardenWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", TrafficWardenWeb.RoomChannel
+  channel "posts:*", TrafficWardenWeb.PostsChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

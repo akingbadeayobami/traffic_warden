@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 
-import channel from "./channel.reducers";
+import connection from "./connection.reducers";
 import posts from "./posts.reducers";
+import user from "./user.reducers";
 
 const reducers = combineReducers({
-    channel,
+    connection,
     posts,
+    user,
 });
 
 export default reducers;

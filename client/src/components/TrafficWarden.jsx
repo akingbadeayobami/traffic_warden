@@ -2,22 +2,34 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Form from './Form';
 import Post from './Post';
-import {connectToSocket, listenForNewComment } from '../actions/channel.actions';
+import Header from './Header';
+import {connectToSocket } from '../actions/connection.actions';
+import {
+    listenForNewComment, listenForNewVote, listenForNewPost,
+    makeNewComment, makeNewPost, upVotePost, downVotePost,
+    getPreviousPosts
+ } from '../actions/posts.actions';
+import {getUserDetails } from '../actions/user.actions';
 import '../App.css';
 
 class TrafficWarden extends Component {
     componentWillMount() {
         this.props.connectToSocketAndRegisterListeners();
+        this.props.getUserDetails();
+        this.props.getPreviousPosts();
     }
     render() {
+        const {
+            user,
+            connection,
+            posts
+        } = this.props;
         return (
             <div>
+                <Header displayName={user.displayName} connected={connection.connected} />
                 <Form />
-                <div className="container">{
-                    [1, 2, 3].map(x =>
-                        <Post />
-                    )
-                }
+                <div className="container">
+                    <Post posts={[1,2,3]}/>
                 </div>
             </div>
         );
@@ -27,6 +39,8 @@ class TrafficWarden extends Component {
 const mapStateToProps = (state) => {
     return {
         posts: state.posts,
+        user: state.user,
+        connection: state.connection
     };
 };
 
@@ -35,10 +49,27 @@ const mapDispatchToProps = (dispatch) => {
         connectToSocketAndRegisterListeners: () => {
             dispatch(connectToSocket());
             dispatch(listenForNewComment());
+            dispatch(listenForNewVote());
+            dispatch(listenForNewPost());
         },
-        // postMessage: (message, session_id) => {
-        //     dispatch(postMessage(message, session_id));
-        // }
+        getPreviousPosts: () => {
+            dispatch(getPreviousPosts());
+        },
+        getUserDetails: () => {
+            dispatch(getUserDetails());
+        },
+        makeNewPost: (message,location,level) => {
+            dispatch(makeNewPost(message,location,level));
+        },
+        makeNewComment: (post_id,message) => {
+            dispatch(makeNewComment(post_id,message));
+        },
+        upVotePost: (postId) => {
+            dispatch(upVotePost(postId));
+        },
+        downVotePost: (postId) => {
+            dispatch(downVotePost(postId));
+        }
     };
 };
 

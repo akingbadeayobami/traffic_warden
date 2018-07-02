@@ -1,17 +1,17 @@
-import {channelConstants} from '../constants';
+import {connectionConstants} from '../constants';
 
 const initial = {
     connected: false
 };
 
-const channel = (state = initial, action) => {
+const connection = (state = initial, action) => {
 
     // Setting connection status
-    if (action.type === channelConstants.CONNECTION_SUCCESSFULL) {
+    if (action.type === connectionConstants.CONNECTION_SUCCESSFULL) {
         return {...state, connected: true };
     }
 
-    if (action.type === channelConstants.CONNECTION_NOT_SUCCESSFULL) {
+    if (action.type === connectionConstants.CONNECTION_NOT_SUCCESSFULL) {
         return {...state, connected: false };
     }
 
@@ -60,4 +60,4 @@ const channel = (state = initial, action) => {
 
 };
 
-export default channel;
+export default connection;

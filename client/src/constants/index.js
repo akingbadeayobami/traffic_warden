@@ -1,8 +1,10 @@
-import channelConstants from './channel.constants';
+import connectionConstants from './connection.constants';
 import postsConstants from './posts.constants';
+import userConstants from './user.constants';
 
 /** @namespace */
 export {
-    channelConstants,
+    connectionConstants,
     postsConstants,
+    userConstants
 };
