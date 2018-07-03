@@ -30,6 +30,11 @@ defmodule TrafficWardenWeb do
   def controller do
     quote do
       use Phoenix.Controller, namespace: TrafficWardenWeb
+
+      alias TrafficWarden.Repo
+      import Ecto
+      import Ecto.Query
+
       import Plug.Conn
       import TrafficWardenWeb.Router.Helpers
       import TrafficWardenWeb.Gettext

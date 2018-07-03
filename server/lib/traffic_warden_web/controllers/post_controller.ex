@@ -1,11 +1,11 @@
 defmodule TrafficWardenWeb.PostController do
   use TrafficWardenWeb, :controller
 
-  alias TrafficWardenWeb.{Post}
+  alias TrafficWardenWeb.{Post, User}
 
   def get_previous(conn, _params) do
-      todos = Repo.all(Post)
-      render(conn, "index.html", todos: todos)
+      posts = Repo.all(Post)
+      render(conn, "post.json", posts: posts)
   end
 
 end
