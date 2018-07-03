@@ -22,6 +22,6 @@ defmodule TrafficWardenWeb.Post do
   def changeset(struct, attrs \\ %{}) do
     struct
     |> cast(attrs, [:message, :location, :user_id, :level, :net_vote])
-    |> validate_required([:message, :location, :user_id, :level, :net_vote])
+    |> validate_required([:message, :location, :user_id, :level])
   end
 end

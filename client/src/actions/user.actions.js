@@ -14,8 +14,8 @@ const getUserDetails = () => {
                 payload: JSON.parse(localStorage.getItem('user'))
             });
         } else {
-            getNewUser().then(user => {
-                // TODO test this
+            getNewUser().then(data => {
+                const user = data.data;
                 localStorage.setItem('user', JSON.stringify(user))
                 dispatch({
                     type: userConstants.SET_USER,

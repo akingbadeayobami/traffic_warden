@@ -5,7 +5,7 @@ defmodule TrafficWardenWeb.UserController do
 
   def new_user(conn, _params) do
     # Generate double random names
-    names = ["Oliver", "Jack", "Charlie", "Harry"]
+    names = ["Oliver", "Jack", "Charlie", "Harry", "Smith", "Peterson"]
     random_name = names
                   |>Enum.take_random(2)
                   |>Enum.join(" ")

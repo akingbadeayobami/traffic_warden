@@ -65,6 +65,10 @@ defmodule TrafficWardenWeb do
 
   def channel do
     quote do
+      alias TrafficWarden.Repo
+      import Ecto
+      import Ecto.Query #todo move this away from here and controllers
+
       use Phoenix.Channel
       import TrafficWardenWeb.Gettext
     end

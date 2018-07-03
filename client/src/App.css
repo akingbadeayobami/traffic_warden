@@ -29,7 +29,8 @@
 
 .card .card-content{
   padding-bottom: 5px;
+  padding-top: 5px;
 }
-p.extra-details{
+span.extra-details, p, h4{
   color: #ddd;
 }

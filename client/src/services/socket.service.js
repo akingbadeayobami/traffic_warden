@@ -24,19 +24,19 @@ function connectToSocket(connectedSuccessfully, connectionNotSuccessfully) {
 }
 
 function listenForNewComment(onNewComment) {
-	channel.on('new_comment', onNewComment);
+	channel.on('new:comment', onNewComment);
 }
 
 function listenForNewPost(onNewPost) {
-	channel.on('new_post', onNewPost);
+	channel.on('new:post', onNewPost);
 }
 
 function listenForNewVote(onNewVote) {
-	channel.on('new_vote', onNewVote);
+	channel.on('new:vote', onNewVote);
 }
 
 function makeNewPost(params, onNewPost){
-	channel.push('make_new_post', params)
+	channel.push('make:post', params)
     .receive('ok', onNewPost)
     .receive('error', () => {
       console.error('Error creating new post');
@@ -44,7 +44,7 @@ function makeNewPost(params, onNewPost){
 }
 
 function makeNewVote(params, onNewVote){
-	channel.push('make_new_vote', params)
+	channel.push('make:vote', params)
     .receive('ok', onNewVote)
     .receive('error', () => {
       console.error('Error creating new vote');
@@ -52,7 +52,7 @@ function makeNewVote(params, onNewVote){
 }
 
 function makeNewComment(params, onNewComment){
-	channel.push('make_new_comment', params)
+	channel.push('make:comment', params)
     .receive('ok', onNewComment)
     .receive('error', () => {
       console.error('Error creating new comment');

@@ -1,8 +1,12 @@
 defmodule TrafficWardenWeb.PostView do
   use TrafficWardenWeb, :view
 
-  def render("post.json", %{posts: posts}) do
+  def render("posts.json", %{posts: posts}) do
     Enum.map(posts, &post_json/1)
+  end
+
+  def render("post.json", %{post: post}) do
+    post_json(post)
   end
 
   def post_json(post) do
