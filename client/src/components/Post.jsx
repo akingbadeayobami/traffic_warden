@@ -24,12 +24,12 @@ export default (props => {
     return (
         posts.map((post, i) =>
             <Col m={6} s={12} key={post.id}>
-                <Card className='blue-grey'
-                    actions={[<a href='#'>UP vote</a>, <a href='#'>Down vote</a>, <a href='#'>Comment</a>]}>
+                <Card className='blue-grey'>
+                    {/* actions={[<a href='#'>UP vote</a>, <a href='#'>Down vote</a>, <a href='#'>Comment</a>]}> */}
                     <h4>{post.location}<span className="right">{levelBadge(post.level)}</span></h4>
                     <p>
                         {post.message}
-                        <span className="extra-details right"><i>Akingbade Ayobami</i> - <i>53 mins ago</i> </span>
+                        <span className="extra-details right"><i>{post.author_name}</i> - <i>{post.created_at}</i> </span>
                     </p>
                 </Card>
             </Col>

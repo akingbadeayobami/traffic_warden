@@ -16,7 +16,6 @@ defmodule TrafficWardenWeb.CommentView do
       post_id: comment.post_id,
       user_id: comment.user_id,
       author_name: "comment.user_id",
-      # created_at: (comment.inserted_at |> NaiveDateTime.to_iso8601) <> "Z", // TODO remove
       created_at: comment.inserted_at
     }
   end

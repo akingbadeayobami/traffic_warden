@@ -16,6 +16,7 @@ class TrafficWarden extends Component {
 
     constructor(props) {
         super(props);
+        //TODO move this to redux 
         this.state = {
             postForm: {
                 message: "",
@@ -68,10 +69,19 @@ class TrafficWarden extends Component {
     handleNewPostSubmission(e) {
         e.preventDefault();
         const { message, location, level } = this.state.postForm;
+        console.log(this.state.postForm);
         this.props.makeNewPost({
             message,
             location,
             level
+        });
+        this.setState({
+            ...this.state,
+            postForm: {
+                message: "",
+                location: "Mile 12",
+                level: "0",
+            }
         });
         // TODO clear the form field here
     }
@@ -86,10 +96,15 @@ class TrafficWarden extends Component {
             downVotePost
         } = this.props;
 
+        const {
+            postForm
+        } = this.state;
+
         return (
             <div>
                 <Header displayName={user.user.displayName} connected={connection.connected} />
                 <Form
+                    postForm={postForm}
                     handleNewPostSubmission={this.handleNewPostSubmission}
                     handlePostMessageChange={this.handlePostMessageChange}
                     handlePostLevelChange={this.handlePostLevelChange}

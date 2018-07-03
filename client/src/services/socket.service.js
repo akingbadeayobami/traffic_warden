@@ -2,8 +2,8 @@ import {
 	Socket
 } from 'phoenix';
 
-const WEBSOCKET_URL = `ws://localhost:4000/socket`;
-// const WEBSOCKET_URL = `ws://${window.location.hostname}:${window.location.port}/socket`;
+// const WEBSOCKET_URL = `ws://localhost:4000/socket`;
+const WEBSOCKET_URL = `ws://${window.location.hostname}:${window.location.port}/socket`;
 // TODO: Subject url must be received from query string
 const CHANNEL_TOPIC = 'posts:traffic';
 
@@ -14,7 +14,7 @@ function connectToSocket(connectedSuccessfully, connectionNotSuccessfully) {
 		params: {},
 		logger: (kind, msg, data) => {
 			console.log(`${kind}: ${msg}`, data);
-		}, // TODO remove
+		},
 	});
 	socket.connect();
 	channel = socket.channel(CHANNEL_TOPIC);

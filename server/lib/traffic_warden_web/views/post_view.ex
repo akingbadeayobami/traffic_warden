@@ -17,8 +17,7 @@ defmodule TrafficWardenWeb.PostView do
       net_vote: post.net_vote,
       user_id: post.user_id,
       level: post.level,
-      author_name: "post.user_id",
-      # created_at: (comment.inserted_at |> NaiveDateTime.to_iso8601) <> "Z", // TODO remove
+      author_name: post.user.display_name,
       created_at: post.inserted_at
     }
   end
