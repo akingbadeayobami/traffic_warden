@@ -7,5 +7,7 @@ defmodule TrafficWardenWeb.Router do
 
   scope "/api", TrafficWardenWeb do
     pipe_through :api
+    post "/newuser", UserController, :new_user
+    get "/posts", PostController, :get_previous
   end
 end

@@ -7,7 +7,6 @@ const connectToSocket = () => {
     return dispatch => {
         const connectedSuccessfully = (response) => {
             dispatch({ type: connectionConstants.CONNECTION_SUCCESSFULL });
-            // TODO dispatch({ type: 'SUBJECT_INFO_LOADED', response }); TODO
         }
         const connectionNotSuccessfully = () => {
             dispatch({ type: connectionConstants.CONNECTION_NOT_SUCCESSFULL });
